@@ -46,7 +46,8 @@ def rename(path):
 def finalize(file):
     os.remove('{file}'.format(file=file))
     os.remove('{file}1'.format(file=file))
-    os.rename('{file}2'.format(file=file), '{file}'.format(file=file))
+    os.system('pdftk {file}2 output {file} compress'.format(file=file))
+    os.remove('{file}2'.format(file=file))
     print('\033[92mAnnotations removed from file\033[0m: \033[33m{0}\033[0m.'.format(file))
 
 
