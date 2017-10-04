@@ -5,7 +5,7 @@
 </a>
 
 
-**rmanns** (**r**e**m**ove **ann**otation**s**) - a small wrapper around `pdftk` for removing annotations from the pdf e-books downloaded from the popular web sites, such as [www.it-ebooks.info](www.it-ebooks.info) and [www.allitebooks.com](www.allitebooks.com).
+**rmanns** (**r**e**m**ove **ann**otation**s**) - a small wrapper around `pdftk` for removing annotations from the pdf e-books downloaded from the popular web sites, such as [www.it-ebooks.info](http://www.it-ebooks.info) and [www.allitebooks.com](http://www.allitebooks.com).
 
 Always before i buy books i download it from the internet and read the samples, for quality assessment. If I like the book - I buy it, if not, I do not buy it. Yeah, maybe it's not cool, but i don't want pay for bad books. The problems with books from the internets is annotations (red annotations is really irritable). This script is solve this problem.
 
