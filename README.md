@@ -36,5 +36,9 @@ You can simply add alias for this script to your `~/.bashrc` or `~/.zshrc` file:
 alias rmanns="python3 ~/.rmanns.py"
 ```
 
+## Disclaimer
+I do not encourage illegal use of content. This tool is aimed only for a convenient evaluation of the book, nothing more.
+I recommend that you buy books that you like. So you support your favorite author and motivate him to improve the book.
+
 ## License
 MIT License
