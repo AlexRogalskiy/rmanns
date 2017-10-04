@@ -8,7 +8,7 @@
 Always before i buy books i have downloaded it from the internet and read the samples, for quality assessment. If I like the book - I buy it, if not, I do not buy it. Yeah, maybe it's not cool, but i don't want pay for bad books. 
 The problems with books from the internets is annotations. Maybe they irritate only me. 
 Anyway, i have written this simple wrapper around pdftk for removing annotations from the books from 
-the popular pirate web sites, such as [www.it-ebooks.info ](www.it-ebooks.info ) and [www.allitebooks.com](www.allitebooks.com).
+the popular pirate web sites, such as [www.it-ebooks.info ](http://www.it-ebooks.info ) and [www.allitebooks.com](http://www.allitebooks.com).
 
 
 ## How to use
