@@ -23,7 +23,6 @@ As i say, this script is just a wrapper around `pdftk` and it's mean that you sh
 
 Now you can use this script. You should move all your books with annotations to one folder and run script:
 ```
-➜ chmod u+x rmanns.py
 ➜ python3 rmanns.py
 
 Are you sure? [y/n]: y
