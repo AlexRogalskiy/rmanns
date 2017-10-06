@@ -8,6 +8,11 @@ PDF = '.pdf'
 SITES = ''.join([
     '-e "s/www.it-ebooks.info/ /" ',
     '-e "s/www.allitebooks.com/ /" ',
+    # ebook777's annotations is most disgusting.
+    # Uppercase... red. It's amoral.
+    '-e "s/WWW.EBOOK777.COM/ /" ',
+    '-e "s/www.ebook777.com/ /" ',
+    '-e "s/free ebooks ==>/ /" ',
 ])
 
 
