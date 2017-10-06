@@ -5,11 +5,9 @@ import sys
 PDF = '.pdf'
 
 # Annotations
-SITES = ''.join([
+ANNOTATIONS = ''.join([
     '-e "s/www.it-ebooks.info/ /" ',
     '-e "s/www.allitebooks.com/ /" ',
-    # ebook777's annotations is most disgusting.
-    # Uppercase... red. It's amoral.
     '-e "s/WWW.EBOOK777.COM/ /" ',
     '-e "s/www.ebook777.com/ /" ',
     '-e "s/free ebooks ==>/ /" ',
@@ -51,9 +49,13 @@ def rename(path):
 def finalize(file):
     os.remove('{file}'.format(file=file))
     os.remove('{file}1'.format(file=file))
-    os.system('pdftk {file}2 output {file} compress'.format(file=file))
     os.remove('{file}2'.format(file=file))
-    print('\033[92mAnnotations removed from file\033[0m: \033[33m{0}\033[0m.'.format(file))
+
+    print(
+        '\033[92m{msg}\033[0m: \033[33m{file}\033[0m.'.format(
+            file=file,
+            msg='Annotations removed from file')
+    )
 
 
 def remove_annots(path):
@@ -61,15 +63,17 @@ def remove_annots(path):
     Remove annotations from file.
     """
     rename(path)
-    cmd = 'pdftk {file} output {file}1 uncompress'
-    cmd_sed = 'sed {sites} {file}1 > {file}2'
+    cmd_uncompress = 'pdftk {file} output {file}1 uncompress'
+    cmd_sed = 'sed {annotations} {file}1 > {file}2'
+    cmd_compress = 'pdftk {file}2 output {file} compress'
 
     for file in os.listdir(path):
         if file.endswith(PDF):
-            os.system(cmd.format(file=file))
-            os.system(cmd_sed.format(file=file, sites=SITES))
+            os.system(cmd_uncompress.format(file=file))
+            os.system(cmd_sed.format(file=file, annotations=ANNOTATIONS))
+            os.system(cmd_compress.format(file=file))
 
-            time.sleep(0.5)
+            time.sleep(0.1)
             finalize(file)
 
 
