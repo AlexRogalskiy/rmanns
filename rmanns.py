@@ -4,6 +4,11 @@ import sys
 
 PDF = '.pdf'
 
+# pdftk's commands
+CMD_UNCOMPRESS = 'pdftk {file} output {file}1 uncompress'
+CMD_SED = 'sed {annotations} {file}1 > {file}2'
+CMD_COMPRESS = 'pdftk {file}2 output {file} compress'
+
 # Annotations
 ANNOTATIONS = ''.join([
     '-e "s/www.it-ebooks.info/ /" ',
@@ -48,6 +53,10 @@ def rename(path):
 
 def finalize(file):
     os.remove('{file}'.format(file=file))
+
+    print('\033[92mCompressing...\033[0m')
+    os.system(CMD_COMPRESS.format(file=file))
+
     os.remove('{file}1'.format(file=file))
     os.remove('{file}2'.format(file=file))
 
@@ -56,6 +65,7 @@ def finalize(file):
             file=file,
             msg='Annotations removed from file')
     )
+    print('\033[96m------\033[0m' * 14, '\n')
 
 
 def remove_annots(path):
@@ -63,26 +73,18 @@ def remove_annots(path):
     Remove annotations from file.
     """
     rename(path)
-    cmd_uncompress = 'pdftk {file} output {file}1 uncompress'
-    cmd_sed = 'sed {annotations} {file}1 > {file}2'
-    cmd_compress = 'pdftk {file}2 output {file} compress'
 
     for file in os.listdir(path):
         if file.endswith(PDF):
-            os.system(cmd_uncompress.format(file=file))
-            os.system(cmd_sed.format(file=file, annotations=ANNOTATIONS))
-            os.system(cmd_compress.format(file=file))
-
-            time.sleep(0.1)
+            print('\033[96m------\033[0m' * 14)
+            print('\033[92mUncompressing...\033[0m')
+            os.system(CMD_UNCOMPRESS.format(file=file))
+            print('\033[92mRemoving annotations...\033[0m')
+            os.system(CMD_SED.format(file=file, annotations=ANNOTATIONS))
             finalize(file)
 
 
 if __name__ == '__main__':
     aw = input('Are you sure? [y/n]: ')
     if aw.lower() in ['y', 'yes']:
-
-        if sys.platform == 'linux':
-            # install_pdftk()
-            pass
-
         remove_annots(os.curdir)
