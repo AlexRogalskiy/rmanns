@@ -16,6 +16,7 @@ ANNOTATIONS = ''.join([
     '-e "s/WWW.EBOOK777.COM/ /" ',
     '-e "s/www.ebook777.com/ /" ',
     '-e "s/free ebooks ==>/ /" ',
+    '-e "s/\/URI/ /" ',
 ])
 
 
