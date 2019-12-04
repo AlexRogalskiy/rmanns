@@ -37,8 +37,7 @@ alias rmanns="python3 ~/.rmanns.py"
 ```
 
 ## Disclaimer
-I do not encourage illegal use of content. This tool is aimed only for a convenient evaluation of the book, nothing more.
-I recommend that you buy books that you like. So you support your favorite author and motivate him to improve the book.
+I do not encourage the illegal use of content. This tool is aimed only for convenient evaluation of the book, nothing more. I recommend you buy books that you like. So you support your favorite author and motivate him to improve the book.
 
 ## License
 MIT License
