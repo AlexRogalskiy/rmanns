@@ -9,6 +9,10 @@
 
 Always before I buy a book I download it from the internet and read the samples, for quality assessment. If I like the book - I buy it, if not, I do not buy it. Yeah, maybe it's not cool, but I don't want to pay for bad books. The problem with books from the internets is annotations (red annotations is really irritable). This script solves this problem.
 
+## Attention
+
+This script was tested only on Linux (Ubuntu), so use it your own risk.
+
 ## How to use
 
 As i say above, this script is just a wrapper around `pdftk` and it's mean that you should install `pdftk`:
